@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Editar{% endblock %}
+
+{% block content %}
+<form action="/edicion" method="POST">
+    <h2>Editar Cita</h2>
+
+    <input type="hidden" name="id" value="{{paciente.id}}">
+
+    <input type="text" name="mascota" class="form-control mb-2" value="{{paciente.mascota}}">
+    <input type="text" name="propietario" class="form-control mb-2" value="{{paciente.propietario}}">
+    <input type="text" name="especie" class="form-control mb-2" value="{{paciente.especie}}">
+    <input type="date" name="fecha" class="form-control mb-2" value="{{paciente.fecha}}">
+
+    <button class="btn btn-primary">Actualizar</button>
+</form>
+{% endblock %}

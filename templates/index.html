@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Listado{% endblock %}
+
+{% block content %}
+
+<div class="d-flex justify-content-between mb-4">
+    <h1>Citas Cielito Perruno</h1>
+    <a href="/crear" class="btn btn-primary">Nueva cita</a>
+</div>
+
+<div class="row">
+    {% for paciente in pacientes %}
+    <div class="col-md-4 mb-4">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">{{ paciente.mascota }}</h5>
+                <p class="card-text">
+                    <strong>Propietario:</strong> {{ paciente.propietario }}<br>
+                    <strong>Especie:</strong> {{ paciente.especie }}<br>
+                    <strong>Fecha:</strong> {{ paciente.fecha }}
+                </p>
+
+                <a href="/editar/{{paciente.id}}" class="btn btn-warning btn-sm">Editar</a>
+                <a href="/eliminar/{{paciente.id}}" class="btn btn-danger btn-sm">Cancelar</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

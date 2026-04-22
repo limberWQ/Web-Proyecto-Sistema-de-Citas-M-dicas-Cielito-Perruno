@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Crear{% endblock %}
+
+{% block content %}
+<form action="/agendar" method="POST">
+    <h2>Nueva Cita</h2>
+
+    <input type="text" name="mascota" class="form-control mb-2" placeholder="Mascota">
+    <input type="text" name="propietario" class="form-control mb-2" placeholder="Propietario">
+    <input type="text" name="especie" class="form-control mb-2" placeholder="Especie">
+    <input type="date" name="fecha" class="form-control mb-2">
+
+    <button class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}
